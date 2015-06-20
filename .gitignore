@@ -1,0 +1,17 @@
+# this is for solving the Kernel Error when start R kernel on AWS remote service
+
+1. open R in terminal 
+  (PATH=$PATH:~/R-3.2.1/bin/)
+  R
+2.reinstall snapshot packages and the kernel spec
+  install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
+                 repos = c('http://irkernel.github.io/', getOption('repos')),
+                 type = 'source')
+  if you see:
+  The downloaded source packages are in‘/tmp/Rtmp2ylw1z/downloaded_packages’Updating HTML index of packages in '.Library'
+  Making 'packages.html' ... done
+  
+  Then type:
+  IRkernel::installspec()
+
+  
